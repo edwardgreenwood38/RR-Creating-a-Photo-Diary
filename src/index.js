@@ -1,5 +1,5 @@
 import { koalas } from './koalas.js'
-import renderKoalaList from './renderKoalaList.js'
+//import renderKoalaList from './renderKoalaList.js'
 
 let activeKoala = null
 
@@ -23,19 +23,19 @@ let render = () => {
 }
 
 
-// // Renders a list of koalas
-// let renderKoalaList = koalas => {
-//     let koalaContainer = document.createElement('div')
+// Renders a list of koalas
+let renderKoalaList = koalas => {
+    let koalaContainer = document.createElement('div')
 
-//     koalaContainer.setAttribute('class', 'ui items')
+    koalaContainer.setAttribute('class', 'ui items')
 
-//     koalas.forEach( koala => {
-//         let koalaCard = renderKoalaCard(koala)
-//         koalaContainer.append(koalaCard)
-//     })
+    koalas.forEach( koala => {
+        let koalaCard = renderKoalaCard(koala)
+        koalaContainer.append(koalaCard)
+    })
 
-//     return koalaContainer
-// }
+    return koalaContainer
+}
 
 // Renders a card to display a single koala
 let renderKoalaCard = koala => {
