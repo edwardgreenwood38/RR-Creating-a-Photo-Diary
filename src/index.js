@@ -1,4 +1,6 @@
 import { koalas } from './koalas.js'
+import { renderKoalaList } from './renderKoalaList.js';
+import { renderKoalaCard } from './renderKoalaCard.js'
 
 let activeKoala = null
 
@@ -22,39 +24,39 @@ let render = () => {
 }
 
 
-// Renders a list of koalas
-let renderKoalaList = koalas => {
-    let koalaContainer = document.createElement('div')
+// // Renders a list of koalas
+// let renderKoalaList = koalas => {
+//     let koalaContainer = document.createElement('div')
 
-    koalaContainer.setAttribute('class', 'ui items')
+//     koalaContainer.setAttribute('class', 'ui items')
 
-    koalas.forEach( koala => {
-        let koalaCard = renderKoalaCard(koala)
-        koalaContainer.append(koalaCard)
-    })
+//     koalas.forEach( koala => {
+//         let koalaCard = renderKoalaCard(koala)
+//         koalaContainer.append(koalaCard)
+//     })
 
-    return koalaContainer
-}
+//     return koalaContainer
+// }
 
-// Renders a card to display a single koala
-let renderKoalaCard = koala => {
-    let koalaCard = document.createElement('div')
-    koalaCard.setAttribute('class', 'item')
-    koalaCard.style.cursor = 'pointer';
-    koalaCard.addEventListener('click', () => {
-        selectKoala(koala)
-    })
+// // Renders a card to display a single koala
+// let renderKoalaCard = koala => {
+//     let koalaCard = document.createElement('div')
+//     koalaCard.setAttribute('class', 'item')
+//     koalaCard.style.cursor = 'pointer';
+//     koalaCard.addEventListener('click', () => {
+//         selectKoala(koala)
+//     })
 
-    let koalaImage = renderKoalaCardImage(koala)
-    let koalaContent = renderKoalaCardContent(koala)
+//     let koalaImage = renderKoalaCardImage(koala)
+//     let koalaContent = renderKoalaCardContent(koala)
 
-    koalaCard.append(
-        koalaImage,
-        koalaContent
-    )
+//     koalaCard.append(
+//         koalaImage,
+//         koalaContent
+//     )
 
-    return koalaCard
-}
+//     return koalaCard
+// }
 
 // Renders the image of a koala card
 let renderKoalaCardImage = koala => {
