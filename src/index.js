@@ -1,8 +1,8 @@
 import { koalas } from './koalas.js'
-import { renderKoalaList } from './renderKoalaList.js';
-import { renderKoalaCard } from './renderKoalaCard.js'
+import rkl from './renderKoalaList.js';
 
 let activeKoala = null
+let renderKoalaList = rkl.renderKoalaList();
 
 // Changes the active koala, then re-renders the page to display that koala
 let selectKoala = koala => {
@@ -38,25 +38,25 @@ let render = () => {
 //     return koalaContainer
 // }
 
-// // Renders a card to display a single koala
-// let renderKoalaCard = koala => {
-//     let koalaCard = document.createElement('div')
-//     koalaCard.setAttribute('class', 'item')
-//     koalaCard.style.cursor = 'pointer';
-//     koalaCard.addEventListener('click', () => {
-//         selectKoala(koala)
-//     })
+// Renders a card to display a single koala
+let renderKoalaCard = koala => {
+    let koalaCard = document.createElement('div')
+    koalaCard.setAttribute('class', 'item')
+    koalaCard.style.cursor = 'pointer';
+    koalaCard.addEventListener('click', () => {
+        selectKoala(koala)
+    })
 
-//     let koalaImage = renderKoalaCardImage(koala)
-//     let koalaContent = renderKoalaCardContent(koala)
+    let koalaImage = renderKoalaCardImage(koala)
+    let koalaContent = renderKoalaCardContent(koala)
 
-//     koalaCard.append(
-//         koalaImage,
-//         koalaContent
-//     )
+    koalaCard.append(
+        koalaImage,
+        koalaContent
+    )
 
-//     return koalaCard
-// }
+    return koalaCard
+}
 
 // Renders the image of a koala card
 let renderKoalaCardImage = koala => {

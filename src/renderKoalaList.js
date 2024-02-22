@@ -1,3 +1,7 @@
+// import { koalas } from './koalas.js'
+//import { renderKoalaCard } from './renderKoalaCard.js';
+
+
 // Renders a list of koalas
 let renderKoalaList = koalas => {
     let koalaContainer = document.createElement('div')
